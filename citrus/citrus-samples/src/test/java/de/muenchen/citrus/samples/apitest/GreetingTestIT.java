@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.junit.Test;
 
 @ContextConfiguration(classes = { EndpointConfig.class })
-public class SampleApiTestIT extends JUnit4CitrusTestRunner {
+public class GreetingTestIT extends JUnit4CitrusTestRunner {
     @Autowired
     private HttpClient sutClient;
 
