@@ -13,7 +13,7 @@ public class EndpointConfig {
         return CitrusEndpoints
                 .http()
                 .client()
-                .requestUrl("http://localhost:8082/greeting")
+                .requestUrl("http://localhost:8082")
                 .build();
     }
 }

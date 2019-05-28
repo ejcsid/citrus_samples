@@ -17,29 +17,37 @@ public class SampleApiTestIT extends JUnit4CitrusTestRunner {
 
     @Test
     @CitrusTest
-    public void testGet() {
+    public void testGreeting() {
         http(httpActionBuilder -> httpActionBuilder
                 .client(sutClient)
                 .send()
-                .get()
+                .get("/greeting")
                 .accept(MediaType.ALL_VALUE));
 
         http(httpActionBuilder -> httpActionBuilder
                 .client(sutClient)
                 .receive()
                 .response(HttpStatus.OK)
-                .messageType(MessageType.JSON)
-                .payload("{\"id\":@ignore@,\"content\":\"Hello, World!\"}"));
-        /*
-                .namespace("xh", "http://www.w3.org/1999/xhtml")
-                .xpath("//xh:h1", "TODO list")
-                .payload("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
-                        "\"org/w3/xhtml/xhtml1-transitional.dtd\">" +
-                        "<html xmlns=\"http://www.w3.org/1999/xhtml\">" +
-                        "<head>@ignore@</head>" +
-                        "<body>@ignore@</body>" +
-                        "</html>"));
-*/
+                .messageType(MessageType.PLAINTEXT)
+                .payload("{\"id\":@variable('id')@,\"content\":\"Hello, World!\"}"));
+    }
+
+    @Test
+    @CitrusTest
+    public void testGreetingWithName() {
+        variable("name", "Eva");
+        http(httpActionBuilder -> httpActionBuilder
+                .client(sutClient)
+                .send()
+                .get("/greeting?name=${name}")
+                .accept(MediaType.ALL_VALUE));
+
+        http(httpActionBuilder -> httpActionBuilder
+                .client(sutClient)
+                .receive()
+                .response(HttpStatus.OK)
+                .messageType(MessageType.PLAINTEXT)
+                .payload("{\"id\":@variable('id')@,\"content\":\"Hello, ${name}!\"}"));
     }
 
 }
