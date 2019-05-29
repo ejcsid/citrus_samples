@@ -1,4 +1,4 @@
-package hello;
+package de.muenchen.apitest.samples;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

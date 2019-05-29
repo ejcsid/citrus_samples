@@ -13,4 +13,4 @@ quote:
 spring:
     profiles: test
 quote:
-    url: https://gturnquist-quoters.cfapps.io/api/random
+    url: https://localhost:8090/
