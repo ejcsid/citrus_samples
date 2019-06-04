@@ -1,4 +1,4 @@
-package de.muenchen.apitest.samples;
+package de.muenchen.apitest.samples.requirement.sample_rest;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package de.muenchen.apitest.samples;
+package de.muenchen.apitest.samples.requirement.sample_rest;
 
 public class Greeting {
 

@@ -1,9 +1,7 @@
-package de.muenchen.apitest.samples;
+package de.muenchen.apitest.samples.requirement.sample_rest_restcall;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Value;
